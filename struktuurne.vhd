@@ -17,9 +17,9 @@ begin  --  bhv
   d1 <= not(not(t1 or t2));
   d2 <= t2;
   y1 <= y1b; y1b <= t1;
-  y2 <= not y1;
-  y3 <= y1;
-  y4 <= not y1;
+  y2 <= not y1b;
+  y3 <= y1b;
+  y4 <= not y1b;
 
   FF1: d_ff port map (clk, d1, q1, q1i);
   FF2: d_ff port map (clk, d2, q2, q2i);
