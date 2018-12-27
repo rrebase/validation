@@ -5,7 +5,7 @@ end entity fsm;
 
 architecture  str  of  fsm  is
   signal q1, q1i, q2, q2i, d1, d2, d2i: bit;
-  signal t1, t2: bit;
+  signal t1, t2, y1b: bit;
   component d_ff
     port ( clk, d: in bit;
            q, not_q: out bit );
@@ -16,7 +16,7 @@ begin  --  bhv
   t2 <= not(not(not(x1 or q1i) or not(not(x2) or q2)));
   d1 <= not(not(t1 or t2));
   d2 <= t2;
-  y1 <= t1;
+  y1 <= y1b; y1b <= t1;
   y2 <= not y1;
   y3 <= y1;
   y4 <= not y1;
