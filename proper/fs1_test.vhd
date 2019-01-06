@@ -18,8 +18,6 @@ architecture bench of test is
            y1, y2, y3, y4: out std_logic );
   end component;
   for U1: f_system use entity work.f_system(tabel);
-  for U2: f_system use entity work.f_system(espresso);
-  for U3: f_system use entity work.f_system(opti);
 
   function compare_signals (s1, s2, s3: std_logic) return std_logic is
   begin
