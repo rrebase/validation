@@ -11,31 +11,29 @@ end entity f_system;
 
 library IEEE; use IEEE.std_logic_1164.all;
 architecture opti of f_system is
-  signal x1i, x2i, x3i, x4i: std_logic;
-  signal t1i, t2i, t3i, t4i, t5i, t6i, t7i, t8i, t9: std_logic;
-  signal t13i, t78i, t256i: std_logic;
+  signal x1i, x2i, t1i, t2i, t3x, t3i, t4i, t5i, t6: std_logic;
+  signal t7, t8x, t8, t68i, t9i, t19, t197i: std_logic;
 begin
   x1i <= not (x1 and x1);
   x2i <= not (x2 and x2);
-  x3i <= not (x3 and x3);
-  x4i <= not (x4 and x4);
 
-  t1i <= not (x1 and x2i and x4);
-  t2i <= not (t9 and x2 and x4i);
-  t3i <= not (x1i and x2 and x3);
-  t4i <= not (x1i and x3 and x4i);
-  t5i <= not (x1 and x3 and x4i);
-  t6i <= not (x2i and x3i and x4);
-  t7i <= not (x1 and x2 and x4);
-  t8i <= not (x1 and x2i and x3i);
-  t9 <= x1i and x3i;
+  t1i <= t4i or x1 or x3;
+  t2i <= not (x1 and x3 and x4);
+  t3x <= not (x3 or x4);
+  t3i <= not (x2  and t3x);
+  t4i <= not (x2 and x4);
+  t5i <= not (x2i and x3);
+  t6 <= t7  and x3;
+  t7 <= not (x1 or x4);
+  t8x <= not (x2 or x4);
+  t8 <= x1 and t8x;
+  t68i <= not (t6 or t8);
+  t9i <= not (x1 and x3);
+  t19 <= not (t1i and t9i);
+  t197i <= not (t19 or t7);
 
-  t13i <= t1i and t3i;
-  t78i <= t7i and t8i;
-  t256i <= t2i and t5i and t6i;
-
-  y1 <= not (t256i and t78i);
-  y2 <= not (t256i and t3i);
-  y3 <= not (t78i and t2i and t4i);
-  y4 <= not (t13i and t4i) or t9;
+  y1 <= not (t197i and t3i);
+  y2 <= not (t19 or t8);
+  y3 <= not (t3i and t4i and t68i);
+  y4 <= not (t2i and t5i and t68i);
 end architecture opti;
